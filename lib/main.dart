@@ -99,7 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SecondPage()));
+                          builder: (context) => const ContentPage11(
+                                title: '',
+                              )));
                 },
                 child: const Text('Ingresar')),
             ElevatedButton(

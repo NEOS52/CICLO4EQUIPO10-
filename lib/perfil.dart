@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:proyectoapp/estados.dart';
+import 'package:proyectoapp/publicaciones.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({Key? key}) : super(key: key);
+class ContentPage11 extends StatefulWidget {
+  const ContentPage11({Key? key, required this.title}) : super(key: key);
 
+  final String title;
+
+  @override
+  State<ContentPage11> createState() => _ContentPageState();
+}
+
+class _ContentPageState extends State<ContentPage11> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,19 +74,83 @@ class SecondPage extends StatelessWidget {
             ),
             Expanded(
                 flex: 1,
-                child: Container(
-                  margin: const EdgeInsets.all(10.0), // exterior
-                  padding: const EdgeInsets.all(10.0), // interior
-                  color: Colors.deepOrange[50],
-                  alignment: Alignment.center,
-                  child:
-                      const Text("Noticias", style: TextStyle(fontSize: 20.0)),
+                child: Column(
+                  children: [
+                    Container(
+                        margin: const EdgeInsets.all(20.0), // exterior
+                        padding: const EdgeInsets.all(10.0), // interior
+                        color: Colors.deepOrange[50],
+                        alignment: Alignment.center,
+                        child: Column(
+                          children: [
+                            const Text("Actividad 1",
+                                style: TextStyle(fontSize: 20.0)),
+                            Row(children: const [
+                              Padding(
+                                padding: EdgeInsets.all(10),
+                                child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      'https://via.placeholder.com/150/92c952'),
+                                  radius: 20,
+                                ),
+                              ),
+                            ]),
+                          ],
+                        )),
+                    Container(
+                        margin: const EdgeInsets.all(20.0), // exterior
+                        padding: const EdgeInsets.all(10.0), // interior
+                        color: Colors.deepOrange[50],
+                        alignment: Alignment.center,
+                        child: Column(
+                          children: [
+                            const Text("Actividad 2",
+                                style: TextStyle(fontSize: 20.0)),
+                            Row(children: const [
+                              Padding(
+                                padding: EdgeInsets.all(10),
+                                child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      'https://via.placeholder.com/150/92c952'),
+                                  radius: 20,
+                                ),
+                              ),
+                            ]),
+                          ],
+                        )),
+                    Container(
+                        margin: const EdgeInsets.all(20.0), // exterior
+                        padding: const EdgeInsets.all(10.0), // interior
+                        color: Colors.deepOrange[50],
+                        alignment: Alignment.center,
+                        child: Column(
+                          children: [
+                            const Text("Actividad 3",
+                                style: TextStyle(fontSize: 20.0)),
+                            Row(children: const [
+                              Padding(
+                                padding: EdgeInsets.all(10),
+                                child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      'https://via.placeholder.com/150/92c952'),
+                                  radius: 20,
+                                ),
+                              ),
+                            ]),
+                          ],
+                        ))
+                  ],
                 )),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ContentPage1(
+                                title: '',
+                              )));
                 },
-                child: const Text("Regresar")),
+                child: const Text('Escribir estado')),
           ],
         ),
       ),

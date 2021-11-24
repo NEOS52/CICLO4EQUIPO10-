@@ -44,18 +44,22 @@ class _ContentPageState extends State<ContentPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.all(10),
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://via.placeholder.com/150/92c952'),
-                      radius: 20,
-                    ),
-                  ),
-                  Text(
-                    listado[i].name,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 14.0),
+                  Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              'https://via.placeholder.com/150/92c952'),
+                          radius: 20,
+                        ),
+                      ),
+                      Text(
+                        listado[i].name,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 14.0),
+                      ),
+                    ],
                   ),
                   Text(
                     listado[i].message,
