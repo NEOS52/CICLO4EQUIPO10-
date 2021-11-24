@@ -12,6 +12,35 @@ class ContentPage11 extends StatefulWidget {
 }
 
 class _ContentPageState extends State<ContentPage11> {
+  int _selectedIndex = 0;
+
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Actividad',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: Ubicacion',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 3: Chat',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,8 +112,7 @@ class _ContentPageState extends State<ContentPage11> {
                         alignment: Alignment.center,
                         child: Column(
                           children: [
-                            const Text("Actividad 1",
-                                style: TextStyle(fontSize: 20.0)),
+                            _widgetOptions.elementAt(_selectedIndex),
                             Row(children: const [
                               Padding(
                                 padding: EdgeInsets.all(10),
@@ -104,8 +132,7 @@ class _ContentPageState extends State<ContentPage11> {
                         alignment: Alignment.center,
                         child: Column(
                           children: [
-                            const Text("Actividad 2",
-                                style: TextStyle(fontSize: 20.0)),
+                            _widgetOptions.elementAt(_selectedIndex),
                             Row(children: const [
                               Padding(
                                 padding: EdgeInsets.all(10),
@@ -125,8 +152,7 @@ class _ContentPageState extends State<ContentPage11> {
                         alignment: Alignment.center,
                         child: Column(
                           children: [
-                            const Text("Actividad 3",
-                                style: TextStyle(fontSize: 20.0)),
+                            _widgetOptions.elementAt(_selectedIndex),
                             Row(children: const [
                               Padding(
                                 padding: EdgeInsets.all(10),
@@ -153,6 +179,33 @@ class _ContentPageState extends State<ContentPage11> {
                 child: const Text('Escribir estado')),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wb_shade),
+            label: 'Actividad',
+            backgroundColor: Colors.purple,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.purple,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.edit_location_rounded),
+            label: 'Ubicación',
+            backgroundColor: Colors.purple,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat_bubble),
+            label: 'Chat',
+            backgroundColor: Colors.purple,
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.deepPurple[50],
+        onTap: _onItemTapped,
       ),
     );
   }
