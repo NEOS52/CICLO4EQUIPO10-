@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyectoapp/estados.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -10,9 +11,16 @@ class SecondPage extends StatelessWidget {
         title: const Text("Perfil"),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.menu),
+            icon: const Icon(Icons.favorite),
             tooltip: 'Me gusta',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ContentPage(
+                            title: '',
+                          )));
+            },
           ),
         ],
       ),
@@ -25,29 +33,33 @@ class SecondPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(10),
                   child: CircleAvatar(
-                    backgroundImage: NetworkImage(''),
-                    radius: 20,
+                    backgroundImage:
+                        NetworkImage('https://via.placeholder.com/150/92c952'),
+                    radius: 30,
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(10),
                   child: CircleAvatar(
-                    backgroundImage: NetworkImage(''),
-                    radius: 20,
+                    backgroundImage:
+                        NetworkImage('https://via.placeholder.com/150/92c952'),
+                    radius: 30,
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(10),
                   child: CircleAvatar(
-                    backgroundImage: NetworkImage(''),
-                    radius: 20,
+                    backgroundImage:
+                        NetworkImage('https://via.placeholder.com/150/92c952'),
+                    radius: 30,
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(10),
                   child: CircleAvatar(
-                    backgroundImage: NetworkImage(''),
-                    radius: 20,
+                    backgroundImage:
+                        NetworkImage('https://via.placeholder.com/150/92c952'),
+                    radius: 30,
                   ),
                 ),
               ],
