@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyectoapp/estados.dart';
+import 'package:proyectoapp/main.dart';
 import 'package:proyectoapp/publicaciones.dart';
 
 class ContentPage11 extends StatefulWidget {
@@ -15,7 +16,7 @@ class _ContentPageState extends State<ContentPage11> {
   int _selectedIndex = 0;
 
   static const TextStyle optionStyle =
-      TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 15, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Actividad',
@@ -177,6 +178,12 @@ class _ContentPageState extends State<ContentPage11> {
                               )));
                 },
                 child: const Text('Escribir estado')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const MyApp()));
+                },
+                child: const Text('Cerrar Sesión')),
           ],
         ),
       ),
