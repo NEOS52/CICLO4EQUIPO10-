@@ -109,7 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const Registro()));
+                          builder: (context) => const FormPage(
+                                title: '',
+                              )));
                 },
                 child: const Text('Registrar'))
           ],
